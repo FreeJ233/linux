@@ -240,12 +240,6 @@ static bool bpf_pseudo_kfunc_call(const struct bpf_insn *insn)
 	       insn->src_reg == BPF_PSEUDO_KFUNC_CALL;
 }
 
-static bool bpf_pseudo_func(const struct bpf_insn *insn)
-{
-	return insn->code == (BPF_LD | BPF_IMM | BPF_DW) &&
-	       insn->src_reg == BPF_PSEUDO_FUNC;
-}
-
 struct bpf_call_arg_meta {
 	struct bpf_map *map_ptr;
 	bool raw_mode;
